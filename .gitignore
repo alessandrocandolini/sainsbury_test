@@ -1,0 +1,31 @@
+# (Old) Eclipse project files
+.classpath
+.project
+.classpath
+.project
+.settings/
+target/
+*/target/**
+my-app/target/**
+
+.metadata
+RemoteSystemsTempFiles/*
+# Built application files
+build/
+app/build/
+
+# Log Files
+*.log
+
+# .DS_Store file
+*.DS_Store
+
+# swp files from vim
+*.swp
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
