@@ -1,11 +1,11 @@
-package com.sainsburytest.app.my_app.operations;
+package com.sainsburytest.app.scraper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sainsburytest.app.my_app.pojo.ItemPojo;
-import com.sainsburytest.app.my_app.pojo.OutputPojo;
+import com.sainsburytest.app.pojo.ItemPojo;
+import com.sainsburytest.app.pojo.OutputPojo;
 
 import junit.framework.TestCase;
 
