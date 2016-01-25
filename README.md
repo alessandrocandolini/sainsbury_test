@@ -68,6 +68,6 @@ Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.
 ## Short description ##
 
 
-### Who do I talk to? ###
+## Who do I talk to? ##
 
 For information, feedback, suggestions, feel free to contact me at alessandro.candolini@gmail.com
