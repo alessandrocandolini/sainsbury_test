@@ -20,7 +20,7 @@ import com.sainsburytest.app.pojo.ItemPojo;
  * 
  * @author acando
  */
-public class ListItemsScraper {
+public class PLPScraper {
 
 	/**
 	 * HtmlWebPage object to grab the information.
@@ -38,7 +38,7 @@ public class ListItemsScraper {
 	 * The list of items is initialize to null by default. 
 	 * @param webPage Set the HtmlWebPage object containing the information which the list of items will be populated
 	 */
-	public ListItemsScraper(NetworkResponsePojo webPage) {
+	public PLPScraper(NetworkResponsePojo webPage) {
 		this.webPage = webPage;
 		this.listOfItems = null;
 	}

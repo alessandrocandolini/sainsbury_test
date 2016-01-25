@@ -12,7 +12,7 @@ import com.sainsburytest.app.pojo.NetworkResponsePojo;
  * 
  * @author acando
  */
-public class SingleItemScraper {
+public class PDPScraper {
 
 	/**
 	 * HtmlWebPage object to grab the information.
@@ -29,7 +29,7 @@ public class SingleItemScraper {
 	 */
 	private Integer pageSizeBytes;
 
-	public SingleItemScraper(NetworkResponsePojo webPage) {
+	public PDPScraper(NetworkResponsePojo webPage) {
 		this.webPage = webPage;
 		this.pageSizeBytes = null;
 		this.itemDescription = null;

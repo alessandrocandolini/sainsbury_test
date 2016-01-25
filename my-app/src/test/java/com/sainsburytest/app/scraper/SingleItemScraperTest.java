@@ -31,7 +31,7 @@ public class SingleItemScraperTest extends TestCase {
 		NetworkResponsePojo webPage = new NetworkResponsePojo();
 		webPage.setBody(body);
 
-		SingleItemScraper scraper = new SingleItemScraper(webPage);
+		PDPScraper scraper = new PDPScraper(webPage);
 		try {
 			scraper.scrape();
 		} catch (ScrapingException e) {

@@ -1,4 +1,4 @@
-package com.sainsburytest.app.scraper;
+package com.sainsburytest.app.operations;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,9 +1,9 @@
 package com.sainsburytest.app;
 
-import com.sainsburytest.app.main.ApplicationOperations;
+import com.sainsburytest.app.operations.ApplicationOperations;
+import com.sainsburytest.app.operations.OutputOperations;
 import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
 import com.sainsburytest.app.pojo.ApplicationOutputDataPojo;
-import com.sainsburytest.app.scraper.OutputOperations;
 
 public class App 
 {

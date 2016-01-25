@@ -31,7 +31,7 @@ public class ListItemsScraperTest extends TestCase {
 	        NetworkResponsePojo webPage = new NetworkResponsePojo();
 	        webPage.setBody(body);
 	        
-	        ListItemsScraper scraper = new ListItemsScraper(webPage);
+	        PLPScraper scraper = new PLPScraper(webPage);
 	        try {
 				scraper.scrape();
 			} catch (ScrapingException e) {

@@ -1,15 +1,15 @@
-package com.sainsburytest.app.main;
+package com.sainsburytest.app.operations;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
+import com.sainsburytest.app.main.Constants;
 import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
 import com.sainsburytest.app.pojo.ApplicationOutputDataPojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.MethodErrorPojo;
-import com.sainsburytest.app.scraper.ScrapingOperations;
 
 /**
  * Class to process application input data and build the output as per instructions.

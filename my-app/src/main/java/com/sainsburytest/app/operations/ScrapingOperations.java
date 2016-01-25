@@ -1,4 +1,4 @@
-package com.sainsburytest.app.scraper;
+package com.sainsburytest.app.operations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,8 @@ import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
 import com.sainsburytest.app.pojo.NetworkResponsePojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.NetworkRequestPojo;
+import com.sainsburytest.app.scraper.PLPScraper;
+import com.sainsburytest.app.scraper.PDPScraper;
 
 /**
  * Collection of methods to glue together the network request, the web scraping and the filling of the attributes inside ItemPojo items
@@ -36,7 +38,7 @@ public class ScrapingOperations {
 			networkRequest.setUrl(input.getUrl());
 			try {
 				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
-				ListItemsScraper scraper = new ListItemsScraper(webPage);
+				PLPScraper scraper = new PLPScraper(webPage);
 				scraper.scrape();
 				list = scraper.getList();
 			} catch (NetworkException e) {
@@ -62,7 +64,7 @@ public class ScrapingOperations {
 			networkRequest.setUrl(item.getUrl());
 			try {
 				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
-				SingleItemScraper scraper = new SingleItemScraper(webPage);
+				PDPScraper scraper = new PDPScraper(webPage);
 				scraper.scrape();
 				updatedItem.setDescription(scraper.getItemDescription());
 				updatedItem.setSize(Helper.formatPageSize(scraper.getPageSizeBytes()));
