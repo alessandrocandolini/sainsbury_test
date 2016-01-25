@@ -2,7 +2,7 @@ package com.sainsburytest.app.scraper;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sainsburytest.app.pojo.ApiOutputDataPojo;
+import com.sainsburytest.app.pojo.ApplicationOutputDataPojo;
 import com.sainsburytest.app.serializer.ProductPojoExclusionStrategy;
 
 /**
@@ -22,7 +22,7 @@ public class OutputOperations {
 	 * @param output The OutputPojo method
 	 * @return Json string representing the output object
 	 */
-	public static String serialize(ApiOutputDataPojo output) {
+	public static String serialize(ApplicationOutputDataPojo output) {
 		Gson gson = new GsonBuilder()
     	.setExclusionStrategies(new ProductPojoExclusionStrategy())
     	            .create();

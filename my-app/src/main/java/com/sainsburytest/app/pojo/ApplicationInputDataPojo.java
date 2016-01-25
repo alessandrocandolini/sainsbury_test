@@ -1,13 +1,13 @@
 package com.sainsburytest.app.pojo;
 
 /**
- * Class providing an abstraction for the API input.
+ * Class providing an abstraction for the application input.
  * 
  * In this simple example, it only wraps the URL
  * 
  * @author acando
  */
-public class ApiInputDataPojo {
+public class ApplicationInputDataPojo {
 	
 	/**
 	 * Url of the webpage provided by the user

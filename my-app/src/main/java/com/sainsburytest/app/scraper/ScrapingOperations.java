@@ -8,7 +8,7 @@ import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
 import com.sainsburytest.app.network.NetworkRequestEngine;
 import com.sainsburytest.app.pojo.HtmlWebPage;
-import com.sainsburytest.app.pojo.ApiInputDataPojo;
+import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.NetworkRequestPojo;
 
@@ -25,7 +25,7 @@ public class ScrapingOperations {
 	 * @return list of products fetched from the webpage
 	 * @throws ScrapingException thrown whenever the provided input breaks the web scraping 
 	 */
-	public static List<ItemPojo> consumeListOfItems(ApiInputDataPojo input) throws ScrapingException {
+	public static List<ItemPojo> consumeListOfItems(ApplicationInputDataPojo input) throws ScrapingException {
 		List<ItemPojo> list = null;
 		if ( input != null && input.getUrl() != null && !input.getUrl().isEmpty()) {
 			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
