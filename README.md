@@ -5,6 +5,10 @@ last updated: 01/25/2016
 
 Maven project that implements a Java web scraping console app aimed at consuming Sainsbury's fruit&vegetables test page and returns a utf-8 json feed with the list of items. 
 
+
+The url of the page is hardcoded, but it's easy to slightly change the code to accept an url as input.
+
+
 ## Build and Run Steps ##
 
 First of all, clone this repository on your computer.
