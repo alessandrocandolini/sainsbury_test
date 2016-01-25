@@ -3,7 +3,7 @@ package com.sainsburytest.app.network;
 import junit.framework.TestCase;
 
 import com.sainsburytest.app.exception.NetworkException;
-import com.sainsburytest.app.pojo.HtmlWebPage;
+import com.sainsburytest.app.pojo.NetworkResponsePojo;
 import com.sainsburytest.app.pojo.NetworkRequestPojo;
 
 public class NetworkRequestEngineTest extends TestCase {
@@ -19,7 +19,7 @@ public class NetworkRequestEngineTest extends TestCase {
 		
 		NetworkRequestPojo networkRequest = new NetworkRequestPojo();
 		networkRequest.setUrl(url);
-		HtmlWebPage webPage = null;
+		NetworkResponsePojo webPage = null;
 		try {
 			webPage = NetworkRequestEngine.consumeRequest(networkRequest);
 			

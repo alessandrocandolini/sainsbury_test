@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import com.sainsburytest.app.exception.ScrapingException;
-import com.sainsburytest.app.pojo.HtmlWebPage;
+import com.sainsburytest.app.pojo.NetworkResponsePojo;
 
 import junit.framework.TestCase;
 
@@ -28,7 +28,7 @@ public class SingleItemScraperTest extends TestCase {
 
 	public void testScrape()
 	{
-		HtmlWebPage webPage = new HtmlWebPage();
+		NetworkResponsePojo webPage = new NetworkResponsePojo();
 		webPage.setBody(body);
 
 		SingleItemScraper scraper = new SingleItemScraper(webPage);

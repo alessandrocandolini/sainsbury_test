@@ -12,7 +12,7 @@ import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
 import com.sainsburytest.app.network.NetworkRequestEngine;
 import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
-import com.sainsburytest.app.pojo.HtmlWebPage;
+import com.sainsburytest.app.pojo.NetworkResponsePojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.NetworkRequestPojo;
 
@@ -35,7 +35,7 @@ public class ScrapingOperations {
 			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
 			networkRequest.setUrl(input.getUrl());
 			try {
-				HtmlWebPage webPage = NetworkRequestEngine.consumeRequest(networkRequest);
+				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
 				ListItemsScraper scraper = new ListItemsScraper(webPage);
 				scraper.scrape();
 				list = scraper.getList();
@@ -61,7 +61,7 @@ public class ScrapingOperations {
 			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
 			networkRequest.setUrl(item.getUrl());
 			try {
-				HtmlWebPage webPage = NetworkRequestEngine.consumeRequest(networkRequest);
+				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
 				SingleItemScraper scraper = new SingleItemScraper(webPage);
 				scraper.scrape();
 				updatedItem.setDescription(scraper.getItemDescription());
