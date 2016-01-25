@@ -113,7 +113,7 @@ Finally, the total cost of the items is computed, all the information are stored
 
 ## Legal disclamer ##
 
-If this were not just a test, I should have put a legal disclaimer. Before doing Web scraping, always be aware of the Terms of Service of the website
+If this were not just a test, I should have put a legal disclaimer. Before doing Web scraping, always be aware of the Terms of Service of the website your are scraping. This application is sending a customized user-agent request header in all requests to the website, so that the owner of the site can in principle discern our traffic from other sources of traffic. 
 
 ## Who do I talk to? ##
 
