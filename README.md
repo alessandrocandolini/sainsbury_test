@@ -93,7 +93,7 @@ The building blocks of this app are:
 
 Network requests are handle by the NetworkRequestExecutor class. 
 The implementation is completely decoupled from any other part of the app, it is hidden within the method of this class and it can be changed at any time without impacting the other parts of the code.
-This is possible since the method read a NetworkRequestPojo and returns a NetworkResponsePojo (without exposing objects such as Document, Response etc which are specific of the current implementation). 
+This is possible since the method takes a WebPageRequestPojo object and returns a WebPagePojo (without exposing objects such as Document, Response etc which are specific of the current implementation). 
 
 Scraping is handled by the two classes PLPScraper and PDPScraper, which scrape the html body of a PLP or PDP respectively, and return the corresponding information. The scrapers accept as input a Webpage object.
 In our application, the Webpage object is obtained via network request, but in principle we can also use a local HTML file (and actually we use this possibility for JUnit test: there are fake pages stored in the resources path), etc. For parsing, we rely on Jsoup library.
