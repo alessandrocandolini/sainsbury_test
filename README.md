@@ -11,8 +11,8 @@ The url of the page is hardcoded, but it's easy to slightly change the code to a
 
 ## Build and Run Steps ##
 
-First of all, clone this repository on your computer.
-For example, from bash command line you can browse to a new clean directory and prompt
+First of all, clone this repository.
+Fromcommand line you can browse to a new clean directory and prompt
 
 ```
 #!bash
@@ -33,25 +33,29 @@ The JUnit tests can be run by selecting the corresponding java class, right clic
 ### Maven command-line build ###
 
 In order to build and run from the command line, you need Maven installed and configured in your system.
-Once done, you can navigate to the folder where you have cloned this repository and type, navigate to my-app  sub-folder and prompt
+
+Navigate to the folder where you have cloned this repository and type, 
 ```
 #!bash
+cd my-app
 mvn package
 ```
 
-This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar and you can run it by simply prompting [from the directory where the file is created]
+This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar  in the target folder. 
+You can run it by simply prompting 
 ```
 #!bash
+cd target
 java -jar my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 ```
 
-This way, all unit tests should be executed during the build process. 
+This way, all unit tests should be processed during the build process. 
 
 
-### Stand-alone runnable jar ###
+### Warning ###
 
-Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository
+Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository. Do not use it. 
 
 ## Short description ##
 
