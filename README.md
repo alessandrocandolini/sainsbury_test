@@ -96,8 +96,18 @@ This is possible since the method read a NetworkRequestPojo and returns a Networ
 Scraping is handled by the two classes PLPScraper and PDPScraper, which scrape the html body of a PLP or PDP respectively, and return the corresponding information. The scrapers accept as input a Webpage object.
 In our application, the Webpage object is obtained via network request, but in principle we can also use a local HTML file (and actually we use this possibility for JUnit test: there are fake pages stored in the resources path), etc. For parsing, we rely on Jsoup library.
 
+
+
 Finally, the classes inside operation package take care of gluing all this stuff together to product the result. A preliminary list of items is first created by retrieving and scraping the PLP; this list has all the items, but not all the details of the items are filled (because some information is missing on PLPs).
-So, for each item the corresponding PDP is retrieved and parsed and the missing item details are filled.
+So, a loop is done over all items and for every item in the list its corresponding PDP is retrieved and parsed and the missing item details are filled.
+
+We offer two different implementations of the loop over PDP [see corresponding methods inside ScrapingOperations]
+
+* single-thread: the PDPs are retrieved and parsed sequentially
+* multi-thread: the PDPs are retrieved and parsed sequentially using Future and ThreadPoolExecutor. 
+
+The multi-thread implementation is basic, but it can provide a flavor of how the approach can be made more scalable. 
+
 Finally, the total cost of the items is computed, all the information are stored in an instance of the ApplicationOutputDataPojo which is serialized and printed on the standard output.
 
 
