@@ -84,7 +84,7 @@ Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.
 
 ## Short description ##
 
-The core functionalities of this app are:
+The building blocks of this app are:
 
 * load webpages
 * scrape information from those webpages
