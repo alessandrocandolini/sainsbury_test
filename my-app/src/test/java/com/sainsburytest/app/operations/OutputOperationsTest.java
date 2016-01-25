@@ -1,4 +1,4 @@
-package com.sainsburytest.app.scraper;
+package com.sainsburytest.app.operations;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

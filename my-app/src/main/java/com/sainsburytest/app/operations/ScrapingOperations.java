@@ -2,6 +2,7 @@ package com.sainsburytest.app.operations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -117,7 +118,7 @@ public class ScrapingOperations {
 				outputList = new ArrayList<ItemPojo>();
 				for ( int loop = 0; loop < size; loop++ ) {
 
-					SingleItemScraperCallable callable  = new SingleItemScraperCallable(listOfItems.get(loop));
+					PDPScraperCallable callable  = new PDPScraperCallable(listOfItems.get(loop));
 					Future<ItemPojo> result = executor.submit(callable);
 					futureList.add(result);
 
@@ -139,5 +140,24 @@ public class ScrapingOperations {
 
 	}
 
+	/**
+	 * Callable wrapper for retrieving and parsing a PDP of a product.
+	 * 
+	 * @author Alessandro Candolini
+	 */
+	private static class PDPScraperCallable implements Callable<ItemPojo>{
+		
+		
+		private final ItemPojo item;
+		 
+	    public PDPScraperCallable(final ItemPojo item) {
+	        this.item = item;
+	    }
+	    
+	    @Override
+	    public ItemPojo call() throws Exception {
+	    	return ScrapingOperations.updateItemWithSinglePageDetails(item);
+	    }
+	}
 
 }

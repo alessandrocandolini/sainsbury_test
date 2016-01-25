@@ -10,7 +10,7 @@ import com.sainsburytest.app.pojo.WebPagePojo;
 
 import junit.framework.TestCase;
 
-public class ListItemsScraperTest extends TestCase {
+public class PLPScraperTest extends TestCase {
 	
 	private String body;
 	private int expectedSize;
