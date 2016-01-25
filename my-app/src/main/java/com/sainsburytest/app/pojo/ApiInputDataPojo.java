@@ -7,7 +7,7 @@ package com.sainsburytest.app.pojo;
  * 
  * @author acando
  */
-public class InputPojo {
+public class ApiInputDataPojo {
 	
 	/**
 	 * Url of the webpage provided by the user

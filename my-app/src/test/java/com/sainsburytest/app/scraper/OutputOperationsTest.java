@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sainsburytest.app.pojo.ItemPojo;
-import com.sainsburytest.app.pojo.OutputPojo;
+import com.sainsburytest.app.pojo.ApiOutputDataPojo;
 
 import junit.framework.TestCase;
 
 public class OutputOperationsTest extends TestCase  {
 	
 	private String json;
-	private OutputPojo output;
+	private ApiOutputDataPojo output;
 	
 	@Override
 	protected void setUp() {
@@ -29,7 +29,7 @@ public class OutputOperationsTest extends TestCase  {
 		item2.setDescription("Descrizione 1");
 		item2.setUrl("http://item2");
 		fakeList.add(item2);
-		output = new OutputPojo();
+		output = new ApiOutputDataPojo();
 		output.setResults(fakeList);
 		output.setTotal(new BigDecimal(10.0));
 	}

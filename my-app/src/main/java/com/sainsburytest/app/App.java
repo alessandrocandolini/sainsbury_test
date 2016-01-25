@@ -7,10 +7,10 @@ import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
 import com.sainsburytest.app.scraper.OutputOperations;
 import com.sainsburytest.app.scraper.ScrapingOperations;
-import com.sainsburytest.app.pojo.InputPojo;
+import com.sainsburytest.app.pojo.ApiInputDataPojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.MethodErrorPojo;
-import com.sainsburytest.app.pojo.OutputPojo;
+import com.sainsburytest.app.pojo.ApiOutputDataPojo;
 import com.sainsburytest.app.main.Constants;
 
 public class App 
@@ -19,10 +19,14 @@ public class App
     {
     	String url = "http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html";
     	
-    	InputPojo input = new InputPojo();
+    	ApiInputDataPojo input = new ApiInputDataPojo();
     	input.setUrl(url);
     	
-    	OutputPojo output = new OutputPojo();
+    	
+    	
+    	//ApiOutputDataPojo output = ApplicationOperations.processInputData(input);
+    	
+    	ApiOutputDataPojo output = new ApiOutputDataPojo();
     	
     	List<ItemPojo> list = null;
 		try {

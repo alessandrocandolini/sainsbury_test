@@ -9,7 +9,7 @@ import java.util.List;
  * @author acando
  *
  */
-public class OutputPojo {
+public class ApiOutputDataPojo {
 	
 	/**
 	 * Total cost of all products found
