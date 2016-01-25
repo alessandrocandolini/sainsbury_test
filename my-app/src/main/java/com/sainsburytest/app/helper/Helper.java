@@ -50,7 +50,7 @@ public class Helper {
 		final BigDecimal amount;
 
 		if ( priceWithCurrency != null && !priceWithCurrency.isEmpty()) {
-			String priceWithoutCurrency = priceWithCurrency.replace("&pound", "").replace("/unit", ""); // TODO
+			String priceWithoutCurrency = priceWithCurrency.replace("&pound", "").replace("/unit", "");  
 
 			DecimalFormatSymbols symbols = new DecimalFormatSymbols();
 			symbols.setDecimalSeparator('.');

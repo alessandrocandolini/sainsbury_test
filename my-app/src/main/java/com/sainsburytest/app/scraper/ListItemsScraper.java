@@ -56,7 +56,7 @@ public class ListItemsScraper {
 			Document document = null;
 
 			document = Jsoup.parse(webPage.getBody());
-			Elements elements = document.select("div.product"); // TODO make global
+			Elements elements = document.select("div.product"); 
 			final int numberOfItems = elements.size();
 
 			if ( numberOfItems > 0 ) {
