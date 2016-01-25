@@ -27,7 +27,6 @@ Fromcommand line you can browse to a new clean directory and prompt
 git clone https://acando86@bitbucket.org/acando86/sainsbury_test.git
 ```
 
-The main application is com.sainsburytest.app.App
 
 We describe two ways to build and run the project:
 
@@ -83,6 +82,8 @@ This way, all unit tests should be processed during the build process.
 Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository. Do not use it! 
 
 ## Short description ##
+
+The main application is com.sainsburytest.app.App
 
 The building blocks of this app are:
 
