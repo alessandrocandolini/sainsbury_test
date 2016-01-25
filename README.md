@@ -3,7 +3,7 @@
 Alessandro Candolini
 last updated: 01/25/2016
 
-Java web scraping console app aimed at consuming a Sainsbury's fruit&vegetables product listing page (PLP) and corresponding product pages (PDPs) and returns a utf-8 json feed with the list of items and their details. The project uses the Maven Apache manager as build tool.
+Java web scraping console app aimed at consuming Sainsbury's fruit&vegetables product listing page (PLP) and corresponding product pages (PDPs) and returns a utf-8 json feed with the list of items and their details. The project uses the Maven Apache manager as build tool.
 
 The url of the PLP page is hardcoded at the beginning, nevertheless it's easy to improve the code in order to read the url from standard input.
 
