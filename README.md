@@ -41,6 +41,10 @@ This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-
 java -jar my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 ```
+
+This way, all unit tests should be executed during the build process. 
+
+
 ### Stand-alone runnable jar ###
 
 Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository
