@@ -111,6 +111,10 @@ The multi-thread implementation is basic, but it can provide a flavor of how the
 Finally, the total cost of the items is computed, all the information are stored in an instance of the ApplicationOutputDataPojo which is serialized and printed on the standard output.
 
 
+## Legal disclamer ##
+
+If this were not just a test, I should have put a legal disclaimer. Before doing Web scraping, always be aware of the Terms of Service of the website
+
 ## Who do I talk to? ##
 
 For information, feedback, suggestions, feel free to contact me at alessandro.candolini@gmail.com
