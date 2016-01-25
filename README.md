@@ -3,8 +3,7 @@
 Alessandro Candolini
 last updated: 01/25/2016
 
-Maven project that implements a Java web scraping console app aimed at consuming Sainsbury's fruit&vegetables test page and returns a utf-8 json feed with the list of items. 
-
+Java web scraping console app aimed at consuming a Sainsbury's fruit&vegetables product listing page (PLP) and returns a utf-8 json feed with the list of items and their details. The project uses the Maven Apache build manager.
 
 The url of the PLP page is hardcoded at the beginning, nevertheless it's easy to improve the code in order to read the url from standard input.
 
@@ -13,9 +12,9 @@ The url of the PLP page is hardcoded at the beginning, nevertheless it's easy to
 Since this is a Maven project, the list of dependencies is kept updated in the pov.xml file. 
 For completeness, here is a list of the libraries currently used:
 
-* JUnit (Java framework to write unit tests)
-* gson (Java serialization library that can convert Java Objects into JSON and back)
-* Jsoup (Java HTML parser library)
+* [JUnit](http://junit.org/) (Java framework to write unit tests)
+* [gson](https://github.com/google/gson)  (Java serialization library that can convert Java Objects into JSON and back)
+* [Jsoup](http://jsoup.org/)  (Java HTML parser library)
 
 ## Build and Run Steps ##
 
