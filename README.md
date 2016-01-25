@@ -23,6 +23,12 @@ git clone https://acando86@bitbucket.org/acando86/sainsbury_test.git
 Notice: the main application is com.sainsburytest.app.App;
 ### Eclipse ###
 
+You need Eclipse with Maven support (M2Eclipse plugin). I have tested the behavior on 
+* Eclipse Java EE IDEs.
+* Version: Luna Release (4.4.0)
+* m2e - Maven Integration for Eclipse (includes Incubating components)	1.5.0.20140606-0033
+
+Steps:
 1. Launch Eclipse
 1. Select a new clean workspace
 1. Import existing maven project
@@ -33,6 +39,8 @@ The JUnit tests can be run by selecting the corresponding java class, right clic
 ### Maven command-line build ###
 
 In order to build and run from the command line, you need Maven installed and configured in your system.
+I have used the following configuration
+* Apache Maven 3.3.9 
 
 Navigate to the folder where you have cloned this repository and type, 
 ```
