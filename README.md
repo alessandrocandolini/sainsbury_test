@@ -34,7 +34,7 @@ We describe two ways to build and run the project:
 * using eclipse IDE
 * using maven command-line tools.
 
-Similar steps should be available also for other IDEs (IntelliJ IDEA, Netbeans, etc)
+Similar steps are available also for other IDEs (IntelliJ IDEA, Netbeans, etc) but we will not describe them here.
 
 ### Eclipse IDE ###
 
