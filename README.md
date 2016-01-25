@@ -29,10 +29,10 @@ The JUnit tests can be run by selecting the corresponding java class, right clic
 ### Maven command-line build ###
 
 In order to build and run from the command line, you need Maven installed and configured in your system.
-Once done, you can navigate to the folder where you have cloned this repository and type 
+Once done, you can navigate to the folder where you have cloned this repository and type, navigate to my-app  sub-folder and prompt
 ```
 #!bash
-mvn clean compile assembly:singlet
+mvn package
 ```
 
 This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar and you can run it by simply prompting [from the directory where the file is created]
