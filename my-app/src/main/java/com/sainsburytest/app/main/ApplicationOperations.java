@@ -33,35 +33,33 @@ public class ApplicationOperations {
 	 */
 	public static ApplicationOutputDataPojo processInputData(ApplicationInputDataPojo input) {
 		
-		// initialize the object that will encapsulate the output of the application
 		final ApplicationOutputDataPojo output = new ApplicationOutputDataPojo();
 		
 		// fill preliminary list of items from PLP
     	List<ItemPojo> listOfItems = null;
     	MethodErrorPojo methodError = null;
 		try {
-			listOfItems = ScrapingOperations.consumeListOfItems(input);
+			listOfItems = ScrapingOperations.extractListOfItemsFromPLP(input);
 		} catch (ScrapingException e) {
 			methodError = new MethodErrorPojo();
 			methodError.setLocalizedDescription(Constants.DEFAULT_ERROR_MESSAGE);
 		}
     	
-		// fill missing details from PDP
-    	List<ItemPojo> listOfItemsWithDescription= ScrapingOperations.consumeSingleItemPage(listOfItems);
-        
-    	// calculate total price of all items
-    	BigDecimal total = Helper.computeTotal(listOfItemsWithDescription);
-    	
-    	// build output object and return it
-    	if ( methodError != null) {
+		if ( methodError != null) {
     		output.setError(methodError);
     	} else {
+    		
+    		// fill missing details from PDP
+        	List<ItemPojo> listOfItemsWithDescription= ScrapingOperations.updateListOfItemUsingPDP(listOfItems);
+            
+        	// calculate total price of all items
+        	BigDecimal total = Helper.computeTotal(listOfItemsWithDescription);
+        	
     		output.setResults(listOfItemsWithDescription);
         	output.setTotal(total);
     	}
     	
     	return output;
-    	
     	
 	}
 

@@ -2,13 +2,17 @@ package com.sainsburytest.app.scraper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import com.sainsburytest.app.exception.NetworkException;
 import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
 import com.sainsburytest.app.network.NetworkRequestEngine;
-import com.sainsburytest.app.pojo.HtmlWebPage;
 import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
+import com.sainsburytest.app.pojo.HtmlWebPage;
 import com.sainsburytest.app.pojo.ItemPojo;
 import com.sainsburytest.app.pojo.NetworkRequestPojo;
 
@@ -25,7 +29,7 @@ public class ScrapingOperations {
 	 * @return list of products fetched from the webpage
 	 * @throws ScrapingException thrown whenever the provided input breaks the web scraping 
 	 */
-	public static List<ItemPojo> consumeListOfItems(ApplicationInputDataPojo input) throws ScrapingException {
+	public static List<ItemPojo> extractListOfItemsFromPLP(ApplicationInputDataPojo input) throws ScrapingException {
 		List<ItemPojo> list = null;
 		if ( input != null && input.getUrl() != null && !input.getUrl().isEmpty()) {
 			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
@@ -75,20 +79,61 @@ public class ScrapingOperations {
 	 * @param list list of items 
 	 * @return list of items having all properties filled with information taken from the corresponding single item page
 	 */
-	public static List<ItemPojo> consumeSingleItemPage(final List<ItemPojo> list) {
+	public static List<ItemPojo> updateListOfItemUsingPDP(final List<ItemPojo> listOfItems) {
+		return updateListOfItemUsingPDPSingleThread(listOfItems);
+	}
+	
+	
+	
+	private static List<ItemPojo> updateListOfItemUsingPDPSingleThread(final List<ItemPojo> listOfItems) {
 
 		List<ItemPojo> output = null;
-		if ( list != null) {
-			final int size = list.size();
+		if ( listOfItems != null) {
+			final int size = listOfItems.size();
 			if ( size > 0 ) {
 				output = new ArrayList<ItemPojo>();
 				for ( int loop = 0; loop < size; loop++ ) {
-					ItemPojo item = updateItemWithSinglePageDetails(list.get(loop));
+					ItemPojo item = updateItemWithSinglePageDetails(listOfItems.get(loop));
 					output.add(item);
 				}
 			}
 		}
 		return output;
+
+	}
+
+
+	private static List<ItemPojo> updateListOfItemUsingPDPMultithread(final List<ItemPojo> listOfItems) {
+
+		List<ItemPojo> outputList = null;
+
+		if ( listOfItems != null) {
+			final int size = listOfItems.size();
+			if ( size > 0 ) {
+				ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+				List<Future<ItemPojo>> futureList = new ArrayList<>();
+				outputList = new ArrayList<ItemPojo>();
+				for ( int loop = 0; loop < size; loop++ ) {
+
+					SingleItemScraperCallable callable  = new SingleItemScraperCallable(listOfItems.get(loop));
+					Future<ItemPojo> result = executor.submit(callable);
+					futureList.add(result);
+
+				}
+
+				for(Future<ItemPojo> future : futureList) {
+					try {
+						final ItemPojo item = future.get() ;
+						outputList.add(item);
+					}  catch (InterruptedException e) {
+					} catch (ExecutionException e) {
+					}
+				}
+				//shut down the executor service now
+				executor.shutdown();
+			}
+		}
+		return outputList;
 
 	}
 
