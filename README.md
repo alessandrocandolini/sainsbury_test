@@ -39,6 +39,7 @@ Similar steps should be available also for other IDEs (IntelliJ IDEA, Netbeans, 
 ### Eclipse IDE ###
 
 Before proceeding, you need a working [Eclipse IDE](https://eclipse.org/) installation with [Maven integration plugin M2Eclipse](http://www.eclipse.org/m2e/Maven). I have tested this guide using:
+
 * Eclipse Java EE - Version: Luna Release (4.4.0)
 * m2e - Maven Integration for Eclipse (includes Incubating components)	v1.5.0.20140606-0033
 
