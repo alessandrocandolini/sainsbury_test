@@ -7,7 +7,7 @@ package com.sainsburytest.app.pojo;
  * Here we assume that the response is a webpage and we just store the body, url and size of that page
  * @author acando
  */
-public class NetworkResponsePojo {
+public class WebPagePojo {
 	
 	/**
 	 * String with the body of the webpage

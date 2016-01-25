@@ -3,8 +3,8 @@ package com.sainsburytest.app.network;
 import junit.framework.TestCase;
 
 import com.sainsburytest.app.exception.NetworkException;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
-import com.sainsburytest.app.pojo.NetworkRequestPojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
+import com.sainsburytest.app.pojo.WebPageRequestPojo;
 
 public class NetworkRequestEngineTest extends TestCase {
 	
@@ -17,11 +17,11 @@ public class NetworkRequestEngineTest extends TestCase {
 	
 	public void testConsumeRequest() {
 		
-		NetworkRequestPojo networkRequest = new NetworkRequestPojo();
+		WebPageRequestPojo networkRequest = new WebPageRequestPojo();
 		networkRequest.setUrl(url);
-		NetworkResponsePojo webPage = null;
+		WebPagePojo webPage = null;
 		try {
-			webPage = NetworkRequestEngine.consumeRequest(networkRequest);
+			webPage = NetworkRequestEngine.retrieveWebPage(networkRequest);
 			
 		} catch (NetworkException e) {
 		}

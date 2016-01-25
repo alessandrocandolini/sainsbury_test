@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import com.sainsburytest.app.exception.ScrapingException;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
 
 import junit.framework.TestCase;
 
@@ -28,7 +28,7 @@ public class ListItemsScraperTest extends TestCase {
 	
 	 public void testScrape()
 	    {
-	        NetworkResponsePojo webPage = new NetworkResponsePojo();
+	        WebPagePojo webPage = new WebPagePojo();
 	        webPage.setBody(body);
 	        
 	        PLPScraper scraper = new PLPScraper(webPage);

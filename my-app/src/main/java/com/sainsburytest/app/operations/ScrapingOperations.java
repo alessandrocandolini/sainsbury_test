@@ -12,9 +12,9 @@ import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
 import com.sainsburytest.app.network.NetworkRequestEngine;
 import com.sainsburytest.app.pojo.ApplicationInputDataPojo;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
 import com.sainsburytest.app.pojo.ItemPojo;
-import com.sainsburytest.app.pojo.NetworkRequestPojo;
+import com.sainsburytest.app.pojo.WebPageRequestPojo;
 import com.sainsburytest.app.scraper.PLPScraper;
 import com.sainsburytest.app.scraper.PDPScraper;
 
@@ -34,10 +34,10 @@ public class ScrapingOperations {
 	public static List<ItemPojo> extractListOfItemsFromPLP(ApplicationInputDataPojo input) throws ScrapingException {
 		List<ItemPojo> list = null;
 		if ( input != null && input.getUrl() != null && !input.getUrl().isEmpty()) {
-			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
+			WebPageRequestPojo networkRequest = new WebPageRequestPojo();
 			networkRequest.setUrl(input.getUrl());
 			try {
-				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
+				WebPagePojo webPage = NetworkRequestEngine.retrieveWebPage(networkRequest);
 				PLPScraper scraper = new PLPScraper(webPage);
 				scraper.scrape();
 				list = scraper.getList();
@@ -60,10 +60,10 @@ public class ScrapingOperations {
 	public static ItemPojo updateItemWithSinglePageDetails(ItemPojo item) {
 		ItemPojo updatedItem = item; 
 		if ( item != null && item.getUrl() != null && !item.getUrl().isEmpty()) {
-			NetworkRequestPojo networkRequest = new NetworkRequestPojo();
+			WebPageRequestPojo networkRequest = new WebPageRequestPojo();
 			networkRequest.setUrl(item.getUrl());
 			try {
-				NetworkResponsePojo webPage = NetworkRequestEngine.consumeRequest(networkRequest);
+				WebPagePojo webPage = NetworkRequestEngine.retrieveWebPage(networkRequest);
 				PDPScraper scraper = new PDPScraper(webPage);
 				scraper.scrape();
 				updatedItem.setDescription(scraper.getItemDescription());

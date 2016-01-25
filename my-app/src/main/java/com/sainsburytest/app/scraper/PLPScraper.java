@@ -11,7 +11,7 @@ import org.jsoup.select.Elements;
 
 import com.sainsburytest.app.exception.ScrapingException;
 import com.sainsburytest.app.helper.Helper;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
 import com.sainsburytest.app.pojo.ItemPojo;
 
 
@@ -25,7 +25,7 @@ public class PLPScraper {
 	/**
 	 * HtmlWebPage object to grab the information.
 	 */
-	private NetworkResponsePojo webPage;
+	private WebPagePojo webPage;
 	
 	/**
 	 * List of items
@@ -38,7 +38,7 @@ public class PLPScraper {
 	 * The list of items is initialize to null by default. 
 	 * @param webPage Set the HtmlWebPage object containing the information which the list of items will be populated
 	 */
-	public PLPScraper(NetworkResponsePojo webPage) {
+	public PLPScraper(WebPagePojo webPage) {
 		this.webPage = webPage;
 		this.listOfItems = null;
 	}

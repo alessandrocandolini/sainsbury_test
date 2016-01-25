@@ -12,7 +12,7 @@ package com.sainsburytest.app.pojo;
  * @author acando
  *
  */
-public class NetworkRequestPojo {
+public class WebPageRequestPojo {
 	
 	/**
 	 * Url of the request

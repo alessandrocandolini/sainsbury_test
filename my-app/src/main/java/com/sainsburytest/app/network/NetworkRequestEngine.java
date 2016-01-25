@@ -6,8 +6,8 @@ import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 
 import com.sainsburytest.app.exception.NetworkException;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
-import com.sainsburytest.app.pojo.NetworkRequestPojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
+import com.sainsburytest.app.pojo.WebPageRequestPojo;
 
 public class NetworkRequestEngine {
 	
@@ -40,9 +40,9 @@ public class NetworkRequestEngine {
 	 * @return HtmlWebPage object filled with the response of the network request. 
 	 * @throws NetworkException Thrown whenever a network connection error or a https status code different from 200 is detected
 	 */
-	public static NetworkResponsePojo consumeRequest(NetworkRequestPojo networkRequest) throws NetworkException {
+	public static WebPagePojo retrieveWebPage(WebPageRequestPojo networkRequest) throws NetworkException {
 
-		NetworkResponsePojo htmlWebPage = null;
+		WebPagePojo htmlWebPage = null;
 
 		if ( networkRequest != null && networkRequest.getUrl() != null && !networkRequest.getUrl().isEmpty()) {
 			try {
@@ -56,7 +56,7 @@ public class NetworkRequestEngine {
 				final int statusCode = response.statusCode();
 
 				if (statusCode == 200 ) {
-					htmlWebPage = new NetworkResponsePojo();
+					htmlWebPage = new WebPagePojo();
 					htmlWebPage.setUrl(networkRequest.getUrl());
 					htmlWebPage.setBody(response.body());
 					htmlWebPage.setPageSizeInBytes(response.bodyAsBytes().length); //  set the size of the body

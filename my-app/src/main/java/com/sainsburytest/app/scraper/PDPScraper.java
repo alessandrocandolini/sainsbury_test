@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.sainsburytest.app.exception.ScrapingException;
-import com.sainsburytest.app.pojo.NetworkResponsePojo;
+import com.sainsburytest.app.pojo.WebPagePojo;
 /**
  * Main class to fetch the webpage of a single product.
  * 
@@ -17,7 +17,7 @@ public class PDPScraper {
 	/**
 	 * HtmlWebPage object to grab the information.
 	 */
-	private NetworkResponsePojo webPage;
+	private WebPagePojo webPage;
 	
 	/**
 	 * Description of the item.
@@ -29,7 +29,7 @@ public class PDPScraper {
 	 */
 	private Integer pageSizeBytes;
 
-	public PDPScraper(NetworkResponsePojo webPage) {
+	public PDPScraper(WebPagePojo webPage) {
 		this.webPage = webPage;
 		this.pageSizeBytes = null;
 		this.itemDescription = null;
