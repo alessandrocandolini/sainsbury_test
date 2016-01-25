@@ -19,7 +19,7 @@ For completeness, here is a list of the libraries currently used:
 ## Build and Run Steps ##
 
 First of all, clone this repository.
-Fromcommand line you can browse to a new clean directory and prompt
+From command line you can browse to a new clean directory and prompt
 
 ```
 #!bash
