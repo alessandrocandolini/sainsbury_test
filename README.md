@@ -49,8 +49,7 @@ This way, all unit tests should be executed during the build process.
 
 Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository
 
-## Description ##
-
+## Short description ##
 
 
 ### Who do I talk to? ###
