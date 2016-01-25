@@ -25,6 +25,7 @@ Fromcommand line you can browse to a new clean directory and prompt
 #!bash
 
 git clone https://acando86@bitbucket.org/acando86/sainsbury_test.git
+cd sainsbury_test/
 ```
 
 
