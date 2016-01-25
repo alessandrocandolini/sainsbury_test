@@ -27,26 +27,35 @@ Fromcommand line you can browse to a new clean directory and prompt
 git clone https://acando86@bitbucket.org/acando86/sainsbury_test.git
 ```
 
-Notice: the main application is com.sainsburytest.app.App;
-### Eclipse ###
+The main application is com.sainsburytest.app.App
 
-You need Eclipse with Maven support (M2Eclipse plugin). I have tested the behavior on 
-* Eclipse Java EE IDEs.
-* Version: Luna Release (4.4.0)
-* m2e - Maven Integration for Eclipse (includes Incubating components)	1.5.0.20140606-0033
+We describe two ways to build and run the project:
+
+* using eclipse IDE
+* using maven command-line tools.
+
+Similar steps should be available also for other IDEs (IntelliJ IDEA, Netbeans, etc)
+
+### Eclipse IDE ###
+
+Before proceeding, you need a working [Eclipse IDE](https://eclipse.org/) installation with [Maven integration plugin M2Eclipse](http://www.eclipse.org/m2e/Maven). I have tested this guide using:
+* Eclipse Java EE - Version: Luna Release (4.4.0)
+* m2e - Maven Integration for Eclipse (includes Incubating components)	v1.5.0.20140606-0033
 
 Steps:
-1. Launch Eclipse
+
+1. Launch Eclipse IDE
 1. Select a new clean workspace
-1. Import existing maven project
-1. At this point the project should be available on eclipse and you can run it as java application by selecting run from menu 
+1. From menu, select "Import" and choose "Import existing maven project"
+1. At this point the project should be imported in the workspace and you should be able to run it as java application by selecting run from menu 
 
 The JUnit tests can be run by selecting the corresponding java class, right click and select "run as Junit test" using the Eclipse JUnit Launcher 
 
 ### Maven command-line build ###
 
-In order to build and run from the command line, you need Maven installed and configured in your system.
-I have used the following configuration
+In order to build and run from the command line, you need [Maven](https://maven.apache.org/) installed and configured in your system.
+I have used the following configuration:
+
 * Apache Maven 3.3.9 
 
 Navigate to the folder where you have cloned this repository and type, 
@@ -56,8 +65,8 @@ cd my-app
 mvn package
 ```
 
-This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar  in the target folder. 
-You can run it by simply prompting 
+This should build a jar with dependencies called my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar in the target folder (please check the location of the file from the output of the command). 
+Once done, you can run the jar by simply prompting 
 ```
 #!bash
 cd target
@@ -70,16 +79,20 @@ This way, all unit tests should be processed during the build process.
 
 ### Warning ###
 
-Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository. Do not use it. 
+Just for backup purposes, a copy of my-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar has been committed as well to this repository. Do not use it! 
 
 ## Short description ##
 
-This core functionalities of this app are:
+The core functionalities of this app are:
+
 * load webpages
 * scrape information from those webpages
 
-Network requests are handle by the NetworkRequestExecutor class. The current implementation relies on the Jsoup met
+Network requests are handle by the NetworkRequestExecutor class. 
+The implementation is completely decoupled from any other part of the app, it is hidden within the method of this class and it can be changed at any time without impacting the other parts of the code.
+This is possible since the method read a NetworkRequestPojo and returns a NetworkResponsePojo (without exposing objects such as Document, Response etc which are specific of the current implementation). 
 
+Scraping is handled by the two classes ListItemScraper and SingleItemScraper
 
 
 ## Who do I talk to? ##
