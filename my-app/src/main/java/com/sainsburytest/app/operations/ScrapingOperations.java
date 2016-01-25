@@ -114,7 +114,7 @@ public class ScrapingOperations {
 			final int size = listOfItems.size();
 			if ( size > 0 ) {
 				ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
-				List<Future<ItemPojo>> futureList = new ArrayList<>();
+				List<Future<ItemPojo>> futureList = new ArrayList<Future<ItemPojo>>(); // Diamond operator can be used here in java 1.7
 				outputList = new ArrayList<ItemPojo>();
 				for ( int loop = 0; loop < size; loop++ ) {
 
