@@ -80,7 +80,7 @@ public class ScrapingOperations {
 	 * @return list of items having all properties filled with information taken from the corresponding single item page
 	 */
 	public static List<ItemPojo> updateListOfItemUsingPDP(final List<ItemPojo> listOfItems) {
-		return updateListOfItemUsingPDPSingleThread(listOfItems);
+		return updateListOfItemUsingPDPMultithread(listOfItems);
 	}
 	
 	
